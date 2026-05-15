@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Plan - ZEE5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { background: #0b0b18; margin: 0; min-height: 100vh; }
+        .zee5-buyplan-page { position: static; display: block; }
+    </style>
+</head>
+<body>
+    <div class="zee5-buyplan-page active">
+        <div class="buyplan-header">
+            <a href="index.html" class="buyplan-back-btn" aria-label="Back"><i class="bi bi-arrow-left"></i></a>
+            <div class="buyplan-logo"><span class="zee5-logo-z">Z</span><span class="zee5-logo-5">5</span></div>
+        </div>
+        <div class="buyplan-layout">
+            <div class="buyplan-content">
+                <h2 class="buyplan-title">4500+ Hours of Premium Content - Now in Your Language!</h2>
+                <div class="buyplan-badges">
+                    <span class="buyplan-badge-4k">4K</span>
+                    <span class="buyplan-badge-dolby">Dolby Atmos</span>
+                </div>
+                <div class="buyplan-duration-tabs">
+                    <button class="duration-tab" data-duration="1">1 Month</button>
+                    <button class="duration-tab active" data-duration="3">3 Months</button>
+                    <button class="duration-tab" data-duration="12">1 Year</button>
+                </div>
+                <div class="buyplan-cards">
+                    <div class="plan-card selected">
+                        <div class="plan-card-header">
+                            <div class="plan-logo">ಕನ್ನಡ Z5</div>
+                            <div class="plan-radio"><input type="radio" name="plan" checked></div>
+                        </div>
+                        <div class="plan-name">Kannada</div>
+                        <div class="plan-price"><span class="plan-old-price">₹399</span> ₹199</div>
+                        <div class="plan-meta"><i class="bi bi-tv"></i> 3 • With Ads</div>
+                        <div class="plan-permonth">Just ₹66/month</div>
+                    </div>
+                    <div class="plan-card-row">
+                        <div class="plan-card plan-card-alt">
+                            <div class="plan-card-header">
+                                <div class="plan-logo">Z5</div>
+                                <div class="plan-radio"><input type="radio" name="plan"></div>
+                            </div>
+                            <div class="plan-name">All Languages + KidZ <span class="plan-best-value">Best Value</span></div>
+                            <div class="plan-price"><span class="plan-old-price">₹899</span> ₹599</div>
+                            <div class="plan-meta"><i class="bi bi-tv"></i> 3 • With Ads</div>
+                            <div class="plan-permonth">Just ₹200/month</div>
+                        </div>
+                        <div class="plan-card plan-card-alt">
+                            <div class="plan-card-header">
+                                <div class="plan-logo">KidZ</div>
+                                <div class="plan-radio"><input type="radio" name="plan"></div>
+                            </div>
+                            <div class="plan-name">KidZ - All Languages</div>
+                            <div class="plan-price"><span class="plan-old-price">₹199</span> ₹129</div>
+                            <div class="plan-meta"><i class="bi bi-tv"></i> 3 • Ad Free*</div>
+                            <div class="plan-permonth">Just ₹43/month</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn buyplan-other-btn">View Other Language Plans</button>
+                <div class="buyplan-bestvalue-tag">Best value for you – Subscribe to All Language Pack!</div>
+                <div class="buyplan-visa-text"><i class="bi bi-credit-card"></i> Enjoy an additional 30% discount* with VISA Debit Cards</div>
+                <button class="btn buyplan-pay-btn">Pay ₹ 199</button>
+            </div>
+            <div class="buyplan-posters">
+                <img src="https://image.tmdb.org/t/p/w342/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Movie Poster" class="buyplan-poster" loading="lazy">
+                <img src="https://image.tmdb.org/t/p/w342/gPbM0MK8CP8A174rmUwGsADNYKD.jpg" alt="Movie Poster" class="buyplan-poster" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Duration tab switching
+        document.querySelectorAll('.duration-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.duration-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Plan card selection
+        document.querySelectorAll('.plan-card, .plan-card-alt').forEach(card => {
+            card.addEventListener('click', function () {
+                document.querySelectorAll('.plan-card, .plan-card-alt').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+                
+                // Update Pay button text
+                const priceContainer = this.querySelector('.plan-price');
+                if (priceContainer) {
+                    const price = priceContainer.lastChild.textContent.trim();
+                    const payBtn = document.querySelector('.buyplan-pay-btn');
+                    if (payBtn) payBtn.textContent = `Pay ${price}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

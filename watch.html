@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch - ZEE5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { background: #0b0b18; margin: 0; min-height: 100vh; }
+        .watch-modal { position: static; display: block; }
+    </style>
+</head>
+<body>
+    <div class="watch-modal active" id="watch-modal">
+        <div class="watch-modal-content">
+            <!-- Close Button -->
+            <a href="index.html" class="watch-modal-close" aria-label="Close">
+                <i class="bi bi-x-lg"></i>
+            </a>
+
+            <div class="watch-layout">
+                <!-- Left: Video Player Area -->
+                <div class="watch-player-area">
+                    <div class="watch-video-container" id="watch-video-container">
+                        <img class="watch-backdrop" id="watch-backdrop" src="" alt="">
+                        <div class="watch-player-overlay">
+                            <div class="watch-play-btn" id="watch-play-btn">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="watch-info-overlay">
+                            <div class="watch-channel-badge">
+                                <span class="watch-channel-logo">Z5</span>
+                                <span class="watch-rating-badge" id="watch-rating-badge">U/A 13+</span>
+                            </div>
+                            <div class="watch-genre" id="watch-genre">...</div>
+                            <div class="watch-preview-text">Free Preview ends in <span id="watch-timer">07:51</span></div>
+                            <a href="buyplan.html" class="btn watch-buyplan-btn text-decoration-none"><i class="bi bi-gem"></i> BUY PLAN NOW</a>
+                        </div>
+                    </div>
+                    <!-- Movie Details below player -->
+                    <div class="watch-details" id="watch-details">
+                        <h2 class="watch-title" id="watch-title">Loading...</h2>
+                        <div class="watch-meta" id="watch-meta"></div>
+                        <p class="watch-overview" id="watch-overview"></p>
+                    </div>
+                </div>
+
+                <!-- Right: Up Next Sidebar -->
+                <div class="watch-sidebar">
+                    <h4 class="watch-sidebar-title">Up Next</h4>
+                    <div class="watch-upnext-list" id="watch-upnext-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Subscription Banner -->
+            <div class="watch-sub-banner">
+                <div class="watch-sub-left">
+                    <div class="watch-sub-logo">Z5</div>
+                    <div class="watch-sub-text">
+                        <span class="watch-sub-price">At just ₹199/3 months</span>
+                    </div>
+                </div>
+                <div class="watch-sub-actions">
+                    <a href="buyplan.html" class="btn watch-btn-viewplans text-decoration-none">View Plans</a>
+                    <a href="buyplan.html" class="btn watch-btn-subscribe text-decoration-none">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="watch.js"></script>
+</body>
+</html>

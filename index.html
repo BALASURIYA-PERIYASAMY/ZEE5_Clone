@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zee5 Clone - Watch Latest Movies, TV Shows & Web Series Online. Stream Bollywood, Hollywood, and Regional content.">
+    <title>Zee5 - Watch Latest Movies, TV Shows & Web Series Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark zee5-navbar" id="zee5-navbar">
+        <div class="container-fluid px-3 px-lg-4">
+
+            <!-- Left Section: Logo + Nav Links -->
+            <div class="d-flex align-items-center zee5-nav-left">
+                <!-- Z5 Logo -->
+                <a class="navbar-brand zee5-logo me-4" href="#" id="zee5-logo">
+                    <span class="zee5-logo-z">Z</span><span class="zee5-logo-5">5</span>
+                </a>
+
+                <!-- Nav Links -->
+                <ul class="navbar-nav d-none d-lg-flex flex-row align-items-center zee5-nav-links" id="zee5-nav-links">
+                    <li class="nav-item">
+                        <a class="nav-link active zee5-nav-link" aria-current="page" href="#" id="nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link zee5-nav-link" href="#" id="nav-tvshows">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link zee5-nav-link" href="#" id="nav-movies">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link zee5-nav-link" href="#" id="nav-free5">FREE5</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link zee5-nav-link" href="#" id="nav-webseries">Web Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link zee5-nav-link zee5-grid-icon" href="#" id="nav-more" title="More">
+                            <i class="bi bi-grid-3x3-gap-fill"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Search + Actions -->
+            <div class="d-flex align-items-center zee5-nav-right">
+                <!-- Search Bar -->
+                <div class="zee5-search-wrapper d-none d-md-flex" id="zee5-search">
+                    <i class="bi bi-search zee5-search-icon"></i>
+                    <input type="text" class="zee5-search-input" placeholder="Search for Movies, Shows, Channels etc." id="zee5-search-input">
+                </div>
+
+                <!-- Language Icon -->
+                <a href="#" class="zee5-lang-icon d-none d-lg-flex" id="zee5-language" title="Language">
+                    <span class="zee5-lang-text">A<sup>a</sup></span>
+                </a>
+
+                <!-- Login Button -->
+                <a href="login.html" class="btn zee5-btn-login d-none d-sm-inline-block" id="zee5-login-btn">LOGIN</a>
+
+                <!-- Buy Plan Button -->
+                <a href="buyplan.html" class="btn zee5-btn-buyplan" id="zee5-buyplan-btn">
+                    <i class="bi bi-gem zee5-crown-icon"></i>
+                    <span>BUY PLAN</span>
+                </a>
+
+                <!-- Hamburger Menu -->
+                <button class="zee5-hamburger" type="button" id="zee5-hamburger" aria-label="Menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 1) 9-Dots More Dropdown -->
+    <div class="zee5-more-dropdown" id="zee5-more-dropdown">
+        <a href="#" class="more-dropdown-item">KidZ</a>
+        <a href="#" class="more-dropdown-item">LOLZ</a>
+        <a href="#" class="more-dropdown-item">Live TV</a>
+        <a href="#" class="more-dropdown-item">Rent</a>
+        <a href="#" class="more-dropdown-item">Sports</a>
+        <a href="#" class="more-dropdown-item">Music</a>
+        <a href="#" class="more-dropdown-item">Videos</a>
+        <a href="#" class="more-dropdown-item">Eduauraa</a>
+    </div>
+
+    <!-- 2) Language Dropdown -->
+    <div class="zee5-lang-dropdown" id="zee5-lang-dropdown">
+        <div class="lang-tabs">
+            <button class="lang-tab active" data-tab="content">Content Language</button>
+            <button class="lang-tab" data-tab="display">Display Language</button>
+        </div>
+        <div class="lang-list" id="lang-list">
+            <label class="lang-item"><span class="lang-native">हिन्दी</span><span class="lang-name">Hindi</span><input type="checkbox" checked></label>
+            <label class="lang-item"><span class="lang-native">English</span><span class="lang-name">English</span><input type="checkbox" checked></label>
+            <label class="lang-item"><span class="lang-native">ಕನ್ನಡ</span><span class="lang-name">Kannada</span><input type="checkbox" checked></label>
+            <label class="lang-item"><span class="lang-native">मराठी</span><span class="lang-name">Marathi</span><input type="checkbox"></label>
+            <label class="lang-item"><span class="lang-native">తెలుగు</span><span class="lang-name">Telugu</span><input type="checkbox"></label>
+            <label class="lang-item"><span class="lang-native">தமிழ்</span><span class="lang-name">Tamil</span><input type="checkbox"></label>
+            <label class="lang-item"><span class="lang-native">മലയാളം</span><span class="lang-name">Malayalam</span><input type="checkbox"></label>
+        </div>
+        <button class="btn lang-apply-btn" id="lang-apply-btn">APPLY</button>
+    </div>
+    <!-- 5) Hamburger Sidebar -->
+    <div class="zee5-sidebar-overlay" id="zee5-sidebar-overlay"></div>
+    <div class="zee5-sidebar" id="zee5-sidebar">
+        <div class="sidebar-item sidebar-home active">Home</div>
+        <div class="sidebar-accordion">
+            <div class="sidebar-accordion-header" data-target="explore-content">
+                <span>Explore</span><i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="sidebar-accordion-body" id="explore-content">
+                <a href="#">TV Shows</a><a href="#">Movies</a><a href="#">Web Series</a>
+                <a href="#">FREE5</a><a href="#">Live TV</a>
+            </div>
+        </div>
+        <div class="sidebar-accordion">
+            <div class="sidebar-accordion-header" data-target="plans-content">
+                <span>Plans</span><i class="bi bi-chevron-up"></i>
+            </div>
+            <div class="sidebar-accordion-body open" id="plans-content">
+                <a href="buyplan.html">Buy Plan</a><a href="#">Have a prepaid code ?</a>
+            </div>
+        </div>
+        <div class="sidebar-accordion">
+            <div class="sidebar-accordion-header" data-target="settings-content">
+                <span>Settings</span><i class="bi bi-chevron-up"></i>
+            </div>
+            <div class="sidebar-accordion-body open" id="settings-content">
+                <a href="#">Help Center</a><a href="#">Reset settings to default</a><a href="#">Contest</a>
+            </div>
+        </div>
+        <div class="sidebar-accordion">
+            <div class="sidebar-accordion-header" data-target="info-content">
+                <span>Info</span><i class="bi bi-chevron-up"></i>
+            </div>
+            <div class="sidebar-accordion-body open" id="info-content">
+                <a href="#">About Us</a><a href="#">Content Redressal Mechanism</a>
+                <a href="#">Terms of Use</a><a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="sidebar-version">Version 5.8.0</div>
+    </div>
+
+    <!-- Search Results Section (Hidden by default) -->
+    <section class="zee5-section" id="section-search-results" style="display: none; padding-top: 80px; min-height: 80vh;">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Search Results for "<span id="search-query-display"></span>"</h3>
+                <a href="#" class="zee5-more-link" id="clear-search-btn">Clear Search <i class="bi bi-x"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="search-results-row" style="flex-wrap: wrap; overflow-x: visible;">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <section class="zee5-carousel-section" id="hero-carousel">
+        <div class="zee5-carousel-wrapper">
+            <button class="zee5-carousel-arrow zee5-arrow-left" id="carousel-prev" aria-label="Previous">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <div class="zee5-carousel-track" id="carousel-track">
+                <!-- Dynamically populated by JS -->
+            </div>
+            <button class="zee5-carousel-arrow zee5-arrow-right" id="carousel-next" aria-label="Next">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+        <!-- Dot indicators -->
+        <div class="zee5-carousel-dots" id="carousel-dots"></div>
+    </section>
+
+    <!-- Continue Watching -->
+    <section class="zee5-section" id="section-continue-watching" style="display: none;">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Continue Watching</h3>
+            </div>
+            <div class="zee5-scroll-row" id="continue-watching-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- In the Spotlight -->
+    <section class="zee5-section" id="section-spotlight">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">In the Spotlight</h3>
+                <a href="#" class="zee5-more-link">More <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="spotlight-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated for You -->
+    <section class="zee5-section" id="section-curated">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Curated for You</h3>
+                <a href="#" class="zee5-more-link">More <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="curated-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Entertainment -->
+    <section class="zee5-section" id="section-entertainment">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Entertainment</h3>
+                <a href="#" class="zee5-more-link">More <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="entertainment-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 10 Movies -->
+    <section class="zee5-section" id="section-top10">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Top 10 Movies</h3>
+                <a href="#" class="zee5-more-link">More <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="top10-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Must Watch Web Series -->
+    <section class="zee5-section" id="section-webseries">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Must Watch Web Series</h3>
+                <a href="#" class="zee5-more-link">More <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="webseries-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming -->
+    <section class="zee5-section" id="section-upcoming">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Upcoming</h3>
+                <a href="#" class="zee5-more-link">More <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="upcoming-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Rated -->
+    <section class="zee5-section" id="section-toprated">
+        <div class="container-fluid px-4">
+            <div class="zee5-section-header">
+                <h3 class="zee5-section-title">Top Rated</h3>
+                <a href="#" class="zee5-more-link">More <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="zee5-scroll-row" id="toprated-row">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="zee5-footer" id="zee5-footer">
+
+        <!-- Top Bar: Download + Connect -->
+        <div class="footer-top-bar">
+            <div class="container-fluid px-4">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="footer-download-label">Download Apps</span>
+                        <a href="#" class="footer-store-badge">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="30">
+                        </a>
+                        <a href="#" class="footer-store-badge">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="30">
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="footer-connect-label">Connect with us</span>
+                        <div class="footer-social">
+                            <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav Links Bar -->
+        <div class="footer-nav-bar">
+            <div class="container-fluid px-4">
+                <div class="footer-nav-links">
+                    <a href="#">Channels</a>
+                    <span class="footer-sep">|</span>
+                    <a href="#">About Us</a>
+                    <span class="footer-sep">|</span>
+                    <a href="#">Help Center</a>
+                    <span class="footer-sep">|</span>
+                    <a href="#">Privacy Policy</a>
+                    <span class="footer-sep">|</span>
+                    <a href="#">Terms of Use</a>
+                    <span class="footer-sep">|</span>
+                    <a href="#">Preferences</a>
+                    <span class="footer-sep">|</span>
+                    <a href="#">Do not Sell or Share my Personal Information</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content: 6 Columns -->
+        <div class="footer-main">
+            <div class="container-fluid px-4">
+                <div class="row">
+                    <!-- Popular TV Shows -->
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Popular TV Shows</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Mahabharat</a></li>
+                            <li><a href="#">Kumm Se Kumm Tak</a></li>
+                            <li><a href="#">Jhansi ki Rani</a></li>
+                            <li><a href="#">Kumkum Bhagya</a></li>
+                            <li><a href="#">Kundali Bhagya</a></li>
+                            <li><a href="#">Bhagya Lakshmi</a></li>
+                            <li><a href="#">Meet</a></li>
+                            <li><a href="#">Annapoorna</a></li>
+                            <li><a href="#">Indira</a></li>
+                            <li><a href="#">Korean Drama</a></li>
+                            <li><a href="#">Kids TV Shows</a></li>
+                        </ul>
+                    </div>
+                    <!-- Premium Movies -->
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Premium Movies</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Bhagwat Chapter One - Raakshas</a></li>
+                            <li><a href="#">Saali Mohabbat</a></li>
+                            <li><a href="#">Kennedy</a></li>
+                            <li><a href="#">Tehran</a></li>
+                            <li><a href="#">Sankranthiki Vasthunnam</a></li>
+                            <li><a href="#">Mana Shankara Vara Prasad Garu</a></li>
+                            <li><a href="#">Mrs</a></li>
+                            <li><a href="#">Sirai</a></li>
+                            <li><a href="#">The Kerala Story</a></li>
+                            <li><a href="#">Article 370</a></li>
+                            <li><a href="#">Parasakthi</a></li>
+                            <li><a href="#">Bandaa</a></li>
+                            <li><a href="#">RRR</a></li>
+                        </ul>
+                    </div>
+                    <!-- Popular LIVE TV Channels -->
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Popular LIVE TV Channels</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Zee News</a></li>
+                            <li><a href="#">Zee TV HD</a></li>
+                            <li><a href="#">&TV HD</a></li>
+                            <li><a href="#">Zee Marathi HD</a></li>
+                        </ul>
+                    </div>
+                    <!-- Popular Web Series -->
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Popular Web Series</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Ayana Mane</a></li>
+                            <li><a href="#">Murshid</a></li>
+                            <li><a href="#">Gyaarah Gyaarah</a></li>
+                            <li><a href="#">Manorathangal</a></li>
+                            <li><a href="#">Andhar Maya</a></li>
+                            <li><a href="#">Seruppugal Jakkirathai</a></li>
+                            <li><a href="#">Aindham Vedham</a></li>
+                            <li><a href="#">The Broken News</a></li>
+                            <li><a href="#">Black Widows</a></li>
+                            <li><a href="#">Duranga 2</a></li>
+                            <li><a href="#">Mithya</a></li>
+                            <li><a href="#">Taj</a></li>
+                            <li><a href="#">Sunflower</a></li>
+                            <li><a href="#">Tripling</a></li>
+                            <li><a href="#">Pitchers</a></li>
+                        </ul>
+                    </div>
+                    <!-- Bollywood Top Celebrities -->
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Bollywood Top Celebrities</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">R Madhavan</a></li>
+                            <li><a href="#">Vikrant Massey</a></li>
+                            <li><a href="#">Deepika Padukone</a></li>
+                            <li><a href="#">Salman Khan</a></li>
+                            <li><a href="#">Manoj Bajpayee</a></li>
+                            <li><a href="#">Pankaj Tripathi</a></li>
+                            <li><a href="#">Vicky Kaushal</a></li>
+                            <li><a href="#">Sunny Deol</a></li>
+                            <li><a href="#">Neil Nitin Mukesh</a></li>
+                            <li><a href="#">Kirti Kulhan</a></li>
+                            <li><a href="#">Amitabh Bachchan</a></li>
+                            <li><a href="#">Kangana Ranaut</a></li>
+                            <li><a href="#">Rashmi Desai</a></li>
+                        </ul>
+                    </div>
+                    <!-- Games & News -->
+                    <div class="col-lg-2 col-md-4 col-6 mb-4">
+                        <h6 class="footer-heading">Games & News</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Web Stories</a></li>
+                            <li><a href="#">ILT20 2025</a></li>
+                            <li><a href="#">Abu Dhabi Knight Riders</a></li>
+                            <li><a href="#">Desert Vipers</a></li>
+                            <li><a href="#">Dubai Capitals</a></li>
+                            <li><a href="#">Gulf Giants</a></li>
+                            <li><a href="#">Mi Emirates</a></li>
+                            <li><a href="#">Sharjah Warriors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+            <div class="container-fluid px-4">
+                <p class="footer-browser-text">Best viewed on Google Chrome 80+, Microsoft Edge 81+, Mozilla Firefox 75+, Safari 5.1.5+</p>
+                <p class="footer-copyright">Copyright &copy; 2026 Zee Entertainment Enterprises Ltd. All rights reserved.</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

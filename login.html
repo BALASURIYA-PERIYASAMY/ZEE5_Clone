@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ZEE5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { background: #0a0a1a; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .zee5-login-modal { position: static; display: flex; background: transparent; }
+        .login-modal-overlay { display: none; }
+    </style>
+</head>
+<body>
+    <div class="zee5-login-modal active">
+        <div class="login-modal-box">
+            <a href="index.html" class="login-close-btn" id="login-close-btn" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+            <h3 class="login-heading">Login to ZEE5</h3>
+            <p class="login-subtext">Login to continue enjoying uninterrupted video and personalised experience.</p>
+            <div class="login-social-icons">
+                <a href="#" class="social-circle google"><i class="bi bi-google"></i></a>
+                <a href="#" class="social-circle facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-circle twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="social-circle apple"><i class="bi bi-apple"></i></a>
+            </div>
+            <div class="login-divider"><span>or</span></div>
+            <input type="text" class="login-input" placeholder="Enter email or mobile number">
+            <button class="btn login-submit-btn">Login</button>
+            <p class="login-register">New to ZEE5 ? <a href="#">Register</a></p>
+        </div>
+    </div>
+</body>
+</html>
