@@ -2,7 +2,7 @@
 
 A responsive and modern ZEE5-inspired streaming platform UI built using HTML, CSS, and Bootstrap 5.
 
-To View : [zee5-copy.netlify.app](https://zee5-copy.netlify.app/)
+View : [zee5-copy.netlify.app](https://zee5-copy.netlify.app/)
 
 ---
 
